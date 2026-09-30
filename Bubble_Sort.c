@@ -1,0 +1,30 @@
+#include <stdio.h>
+void bubblesort(int arr[],int size){
+    int i,j,temp;
+    for(i=0;i<size-1;i++){
+        for(j=0;j<size-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+}
+int main(){
+    int i,n;
+    printf("Enter number of elements in an array: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter %d elements in array:-\n",n);
+    for(i=0;i<n;i++){
+        printf("A[%d]: ",i+1);
+        scanf("%d",&arr[i]);
+    }
+    bubblesort(arr,n);
+    printf("Your sorted array: \n");
+    for(i=0;i<n;i++){
+        printf("A[%d]: %d\n",i+1,arr[i]);
+    }
+    return 0;
+}
